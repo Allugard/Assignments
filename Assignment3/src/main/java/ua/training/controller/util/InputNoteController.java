@@ -63,13 +63,13 @@ public class InputNoteController {
     private String inputData(String regex) {
         String res = "";
 //        while(!(sc.hasNextLine() && (res = sc.nextLine()).matches(regex))){
-        while(!(sc.hasNextLine() && checkInputStrin(res=sc.nextLine(), regex))){
+        while(!(sc.hasNextLine() && checkInputString(res=sc.nextLine(), regex))){
             view.printWrongInputMessages();
         }
         return res;
     }
 
-    public boolean checkInputStrin(String str, String regex){
+    public boolean checkInputString(String str, String regex){
         return str.matches(regex);
     }
 
