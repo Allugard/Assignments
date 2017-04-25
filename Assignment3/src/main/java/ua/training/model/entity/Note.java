@@ -2,6 +2,8 @@ package main.java.ua.training.model.entity;
 
 import main.java.ua.training.util.GlovalValues;
 
+import static main.java.ua.training.util.GlovalValues.*;
+
 /**
  * Created by allugard on 25.04.17.
  */
@@ -59,11 +61,11 @@ public class Note {
 
     @Override
     public String toString() {
-        return "Note{" +
-                "fullName=" + fullName +
-                ", email='" + email + '\'' +
-                ", phone='" + phone + '\'' +
-                ", address=" + address +
-                '}';
+        StringBuilder sb = new StringBuilder();
+        sb.append("Full name - ").append(fullName).append(SEMICOLON).append(NEW_ROW).
+                append("Email - ").append(email).append(SEMICOLON).append(NEW_ROW).
+                append("Phone - ").append(phone).append(SEMICOLON).append(NEW_ROW).
+                append("Address:").append(address).append(DOT);
+        return sb.toString();
     }
 }

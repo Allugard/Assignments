@@ -54,11 +54,10 @@ public class Address {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(city).append(GlovalValues.COMMA).append(GlovalValues.SPACE)
-                .append(street).append(GlovalValues.COMMA).append(GlovalValues.SPACE)
-                .append(houseNumber).append(GlovalValues.COMMA).append(GlovalValues.SPACE)
-                .append(apartmentNumber).append(GlovalValues.COMMA).append(GlovalValues.SPACE)
-                .append(GlovalValues.SEMICOLON);
+        sb.append("city - ").append(city).append(GlovalValues.COMMA).append(GlovalValues.SPACE)
+                .append("street - ").append(street).append(GlovalValues.COMMA).append(GlovalValues.SPACE)
+                .append("house №").append(houseNumber).append(GlovalValues.COMMA).append(GlovalValues.SPACE)
+                .append("appartment №").append(apartmentNumber).append(GlovalValues.SPACE);
         return sb.toString();
     }
 }

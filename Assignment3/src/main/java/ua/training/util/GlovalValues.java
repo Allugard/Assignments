@@ -11,6 +11,8 @@ public interface GlovalValues {
     String SPACE = " ";
     String SEMICOLON = ";";
     String NEW_ROW = "\n";
+    String COLON = ":";
+    String TAB = "  ";
 
 
 }

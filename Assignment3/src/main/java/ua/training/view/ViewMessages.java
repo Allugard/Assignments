@@ -15,7 +15,7 @@ interface ViewMessages {
     String HOUSE_NUMBER= "house number";
     String STREET= "street";
     String WRONG_INPUT = "Wrong input.";
-    String RESULT = "Your note:";
+    String RESULT = "Your note";
 
 
 }
