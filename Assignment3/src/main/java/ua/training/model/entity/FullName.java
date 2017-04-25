@@ -1,6 +1,6 @@
-package main.java.ua.training.model.entity;
+package ua.training.model.entity;
 
-import main.java.ua.training.util.GlovalValues;
+import ua.training.util.GlovalValues;
 
 /**
  * Created by allugard on 25.04.17.

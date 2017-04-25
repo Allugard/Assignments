@@ -1,7 +1,7 @@
-package main.java.ua.training.view;
+package ua.training.view;
 
-import static main.java.ua.training.util.GlovalValues.*;
-import static main.java.ua.training.view.ViewMessages.*;
+import static ua.training.util.GlovalValues.*;
+import static ua.training.view.ViewMessages.*;
 
 /**
  * Created by allugard on 16.04.17.

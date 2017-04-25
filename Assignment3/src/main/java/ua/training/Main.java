@@ -1,11 +1,11 @@
-package main.java.ua.training;
+package ua.training;
 
 
-import main.java.ua.training.controller.Controller;
-import main.java.ua.training.model.Model;
-import main.java.ua.training.model.entity.Note;
-import main.java.ua.training.util.GlovalValues;
-import main.java.ua.training.view.View;
+import ua.training.controller.Controller;
+import ua.training.model.Model;
+import ua.training.model.entity.Note;
+import ua.training.util.GlovalValues;
+import ua.training.view.View;
 
 /**
  * Created by allugard on 16.04.17.
@@ -13,6 +13,6 @@ import main.java.ua.training.view.View;
 public class Main {
     public static void main(String[] args) {
         Controller controller = new Controller(new Model(), new View());
-        controller.processUser();
+//        controller.processUser();
     }
 }

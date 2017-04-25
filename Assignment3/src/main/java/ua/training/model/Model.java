@@ -1,6 +1,6 @@
-package main.java.ua.training.model;
+package ua.training.model;
 
-import main.java.ua.training.model.entity.Note;
+import ua.training.model.entity.Note;
 
 import java.util.ArrayList;
 import java.util.List;

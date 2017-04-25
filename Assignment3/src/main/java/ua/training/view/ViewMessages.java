@@ -1,4 +1,4 @@
-package main.java.ua.training.view;
+package ua.training.view;
 
 /**
  * Created by allugard on 24.04.17.

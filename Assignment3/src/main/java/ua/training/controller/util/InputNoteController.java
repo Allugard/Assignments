@@ -1,11 +1,11 @@
-package main.java.ua.training.controller.util;
+package ua.training.controller.util;
 
-import main.java.ua.training.model.entity.Note;
-import main.java.ua.training.view.View;
+import ua.training.model.entity.Note;
+import ua.training.view.View;
 
 import java.util.Scanner;
 
-import static main.java.ua.training.controller.util.RegularExpression.*;
+import static ua.training.controller.util.RegularExpression.*;
 
 /**
  * Created by allugard on 25.04.17.
@@ -62,11 +62,15 @@ public class InputNoteController {
 
     private String inputData(String regex) {
         String res = "";
-        while(!(sc.hasNextLine() && (res = sc.nextLine()).matches(regex))){
+//        while(!(sc.hasNextLine() && (res = sc.nextLine()).matches(regex))){
+        while(!(sc.hasNextLine() && checkInputStrin(res=sc.nextLine(), regex))){
             view.printWrongInputMessages();
         }
         return res;
+    }
 
+    public boolean checkInputStrin(String str, String regex){
+        return str.matches(regex);
     }
 
 

@@ -1,5 +1,4 @@
-
-package main.java.ua.training.util;
+package ua.training.util;
 
 /**
  * Created by allugard on 17.04.17.

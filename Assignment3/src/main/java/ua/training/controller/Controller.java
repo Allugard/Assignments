@@ -1,8 +1,8 @@
-package main.java.ua.training.controller;
+package ua.training.controller;
 
-import main.java.ua.training.controller.util.InputNoteController;
-import main.java.ua.training.model.Model;
-import main.java.ua.training.view.View;
+import ua.training.controller.util.InputNoteController;
+import ua.training.model.Model;
+import ua.training.view.View;
 
 import java.util.Scanner;
 
