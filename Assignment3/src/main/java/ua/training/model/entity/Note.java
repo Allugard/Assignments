@@ -25,5 +25,45 @@ public class Note {
                 new Address(town, street, houseNumber, apartmentNumber));
     }
 
+    public FullName getFullName() {
+        return fullName;
+    }
 
+    public void setFullName(FullName fullName) {
+        this.fullName = fullName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public Address getAddress() {
+        return address;
+    }
+
+    public void setAddress(Address address) {
+        this.address = address;
+    }
+
+    @Override
+    public String toString() {
+        return "Note{" +
+                "fullName=" + fullName +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
+                ", address=" + address +
+                '}';
+    }
 }

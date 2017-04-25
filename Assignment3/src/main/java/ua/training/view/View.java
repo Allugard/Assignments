@@ -1,8 +1,7 @@
 package main.java.ua.training.view;
 
-import main.java.ua.training.util.GlovalValues;
-
-import java.util.List;
+import static main.java.ua.training.util.GlovalValues.*;
+import static main.java.ua.training.view.ViewMessages.*;
 
 /**
  * Created by allugard on 16.04.17.
@@ -23,19 +22,40 @@ public class View {
     }
 
     public void printInputFirstNameMessages(){
-        printMessage(concat(ViewMessages.ENTER + ViewMessages.FIRST_NAME + GlovalValues.DOT));
+        printMessage(concat(ENTER + SPACE +FIRST_NAME + DOT));
     }
     public void printInputLastNameMessages(){
-        printMessage(concat(ViewMessages.ENTER + ViewMessages.LAST_NAME + GlovalValues.DOT));
+        printMessage(concat(ENTER + SPACE + LAST_NAME + DOT));
     }
     public void printInputEmailMessages(){
-        printMessage(concat(ViewMessages.ENTER + ViewMessages.EMAIL + GlovalValues.DOT));
+        printMessage(concat(ENTER + SPACE + EMAIL + DOT));
     }
-    public void printInputPhomeMessages(){
-        printMessage(concat(ViewMessages.ENTER + ViewMessages.PHONE + GlovalValues.DOT));
+    public void printInputPhoneMessages(){
+        printMessage(concat(ENTER + SPACE + PHONE + DOT));
     }
+
+    public void printInputCityMessages(){
+        printMessage(concat(ENTER + SPACE + CITY + DOT));
+    }
+
+    public void printInputStreetMessages(){
+        printMessage(concat(ENTER + SPACE + STREET + DOT));
+    }
+
+    public void printInputAppartmentNumberMessages(){
+        printMessage(concat(ENTER + SPACE + APPARTMENT_NUMBER + DOT));
+    }
+
+    public void printInputHouseNumberMessages(){
+        printMessage(concat(ENTER + SPACE + HOUSE_NUMBER + DOT));
+    }
+
     public void printWrongInputMessages(){
-        printMessage(concat(ViewMessages.ENTER + ViewMessages.WRONG_INPUT + GlovalValues.DOT));
+        printMessage(concat(ENTER + SPACE + WRONG_INPUT + DOT));
+    }
+
+    public void printResultMessages(){
+        printMessage(concat(RESULT + NEW_ROW));
     }
 
 

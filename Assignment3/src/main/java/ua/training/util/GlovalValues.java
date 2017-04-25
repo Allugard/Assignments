@@ -10,6 +10,7 @@ public interface GlovalValues {
     String COMMA = ",";
     String SPACE = " ";
     String SEMICOLON = ";";
+    String NEW_ROW = "\n";
 
 
 }

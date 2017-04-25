@@ -1,6 +1,7 @@
 package main.java.ua.training;
 
 
+import main.java.ua.training.controller.Controller;
 import main.java.ua.training.model.Model;
 import main.java.ua.training.model.entity.Note;
 import main.java.ua.training.util.GlovalValues;
@@ -11,7 +12,7 @@ import main.java.ua.training.view.View;
  */
 public class Main {
     public static void main(String[] args) {
-
-        Note note = Note.Build();
+        Controller controller = new Controller(new Model(), new View());
+        controller.processUser();
     }
 }
