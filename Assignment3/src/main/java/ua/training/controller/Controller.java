@@ -23,11 +23,11 @@ public class Controller {
 
         Scanner scanner = new Scanner(System.in);
 
-        model.setNote(new InputNoteController(scanner, view).buildNote());
+        model.addNote(new InputNoteController(scanner, view).buildNote());
 
         view.printResultMessages();
 
-        view.printMessage(model.getNote().toString());
+        view.printMessage(model.getNotes().toString());
 
     }
 }

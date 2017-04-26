@@ -12,13 +12,21 @@ import java.util.Random;
  */
 public class Model {
 
-    Note note;
+    List <Note> notes;
 
-    public Note getNote() {
-        return note;
+    public Model(){
+        notes = new ArrayList<>();
     }
 
-    public void setNote(Note note) {
-        this.note = note;
+    public List<Note> getNotes() {
+        return notes;
+    }
+
+    public void setNotes(List<Note> note) {
+        this.notes = note;
+    }
+
+    public void addNote(Note note) {
+        notes.add(note);
     }
 }

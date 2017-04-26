@@ -57,7 +57,7 @@ public class Address {
         sb.append("city - ").append(city).append(GlovalValues.COMMA).append(GlovalValues.SPACE)
                 .append("street - ").append(street).append(GlovalValues.COMMA).append(GlovalValues.SPACE)
                 .append("house №").append(houseNumber).append(GlovalValues.COMMA).append(GlovalValues.SPACE)
-                .append("appartment №").append(apartmentNumber).append(GlovalValues.SPACE);
+                .append("appartment №").append(apartmentNumber);
         return sb.toString();
     }
 }
