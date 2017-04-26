@@ -1,7 +1,12 @@
 package ua.training.model;
 
+import ua.training.dao.NoteDao;
+import ua.training.dao.impl.NoteDaoJdbcImpl;
+import ua.training.exceptions.DuplicateLoginException;
 import ua.training.model.entity.Note;
 
+import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -12,10 +17,12 @@ import java.util.Random;
  */
 public class Model {
 
-    List <Note> notes;
+    private List <Note> notes;
+    private NoteDao noteDao;
 
-    public Model(){
+    public Model() {
         notes = new ArrayList<>();
+        noteDao = new NoteDaoJdbcImpl();
     }
 
     public List<Note> getNotes() {
@@ -26,7 +33,8 @@ public class Model {
         this.notes = note;
     }
 
-    public void addNote(Note note) {
+    public void addNote(Note note) throws DuplicateLoginException, SQLException {
+        noteDao.add(note);
         notes.add(note);
     }
 }
