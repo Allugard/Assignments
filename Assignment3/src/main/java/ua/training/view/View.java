@@ -58,8 +58,11 @@ public class View {
         printMessage(concat(RESULT, COLON));
     }
 
-
     public void printInputLoginMessages() {
         printMessage(concat(ENTER, SPACE, LOGIN, COLON));
+    }
+
+    public void printWrongLoginMessages() {
+        printMessage(concat(WRONG_LOGIN));
     }
 }

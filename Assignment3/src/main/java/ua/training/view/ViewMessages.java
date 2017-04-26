@@ -17,6 +17,7 @@ interface ViewMessages {
     String STREET= "street";
     String WRONG_INPUT = "Wrong input.";
     String RESULT = "Your note";
+    String WRONG_LOGIN = "Login is already used.";
 
 
 }
