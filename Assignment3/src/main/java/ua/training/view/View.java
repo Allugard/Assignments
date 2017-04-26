@@ -59,4 +59,7 @@ public class View {
     }
 
 
+    public void printInputLoginMessages() {
+        printMessage(concat(ENTER, SPACE, LOGIN, COLON));
+    }
 }

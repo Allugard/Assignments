@@ -8,6 +8,7 @@ interface ViewMessages {
     String ENTER= "Enter";
     String FIRST_NAME = "first name";
     String LAST_NAME = "last name";
+    String LOGIN = "login";
     String EMAIL = "email";
     String PHONE= "phone";
     String CITY= "city";

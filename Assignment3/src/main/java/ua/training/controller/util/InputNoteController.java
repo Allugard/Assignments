@@ -18,6 +18,8 @@ public class InputNoteController {
     private String firstName;
     private String lastName;
 
+    private String login;
+
     private String email;
     private String phone;
 
@@ -37,7 +39,10 @@ public class InputNoteController {
         firstName = inputData(FIRST_NAME_REG_EX);
 
         view.printInputLastNameMessages();
-        lastName = inputData(SECOND_NAME__REG_EX);
+        lastName = inputData(SECOND_NAME_REG_EX);
+
+        view.printInputLoginMessages();
+        login = inputData(LOGIN_REG_EX);
 
         view.printInputEmailMessages();
         email = inputData(EMAIL_REG_EX);
@@ -57,7 +62,7 @@ public class InputNoteController {
         view.printInputAppartmentNumberMessages();
         apartmentNumber = inputData(APPARTMENT_NUMBER_REG_EX);
 
-        return Note.Build(firstName, lastName, email, phone, city, street, houseNumber, apartmentNumber);
+        return Note.Build(firstName, lastName, login, email, phone, city, street, houseNumber, apartmentNumber);
     }
 
     private String inputData(String regex) {

@@ -8,20 +8,22 @@ import static ua.training.util.GlovalValues.*;
 public class Note {
 
     private FullName fullName;
+    private String login;
     private String email;
     private String phone;
     private Address address;
 
-    private Note(FullName fullName, String email, String phone, Address address) {
+    private Note(FullName fullName, String login, String email, String phone, Address address) {
+        this.login = login;
         this.fullName = fullName;
         this.email = email;
         this.phone = phone;
         this.address = address;
     }
 
-    public static Note Build(String firstName, String lastName, String email, String phone,
+    public static Note Build(String firstName, String lastName, String login, String email, String phone,
                       String town, String street, String houseNumber, String apartmentNumber){
-        return new Note(new FullName(firstName, lastName), email, phone,
+        return new Note(new FullName(firstName, lastName), login, email, phone,
                 new Address(town, street, houseNumber, apartmentNumber));
     }
 
@@ -31,6 +33,14 @@ public class Note {
 
     public void setFullName(FullName fullName) {
         this.fullName = fullName;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
     }
 
     public String getEmail() {
@@ -61,6 +71,7 @@ public class Note {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("Full name - ").append(fullName).append(SEMICOLON).append(NEW_ROW).
+                append("Login - ").append(login).append(SEMICOLON).append(NEW_ROW).
                 append("Email - ").append(email).append(SEMICOLON).append(NEW_ROW).
                 append("Phone - ").append(phone).append(SEMICOLON).append(NEW_ROW).
                 append("Address:").append(address).append(DOT);

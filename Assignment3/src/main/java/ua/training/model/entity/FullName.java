@@ -34,7 +34,7 @@ public class FullName {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append(firstName).append(GlovalValues.SPACE).append(lastName.charAt(0)).append(GlovalValues.DOT);
+        sb.append(lastName).append(GlovalValues.SPACE).append(firstName.charAt(0)).append(GlovalValues.DOT);
         return sb.toString();
     }
 }

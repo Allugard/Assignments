@@ -6,7 +6,9 @@ package ua.training.controller.util;
 public interface RegularExpression {
 
     String FIRST_NAME_REG_EX = "[A-Z]{1}[a-z]{1,20}";
-    String SECOND_NAME__REG_EX = "[A-Z]{1}[a-z]{1,20}";
+    String SECOND_NAME_REG_EX = "[A-Z]{1}[a-z]{1,20}";
+
+    String LOGIN_REG_EX = "[A-Za-z0-9]{1,20}";
 
     String MOBILE_PHONE_REG_EX = "\\(?([0-9]{3})\\)?([ .-]?)([0-9]{3})\\2([0-9]{4})";
 

@@ -38,7 +38,7 @@ public class RegularExpressionTest {
     public void lastNameTestWithRightValue(){
         String name = "Vasilenko";
         boolean expected = true;
-        boolean actual = name.matches(SECOND_NAME__REG_EX);
+        boolean actual = name.matches(SECOND_NAME_REG_EX);
         assertEquals(expected, actual);
     }
 
@@ -46,7 +46,7 @@ public class RegularExpressionTest {
     public void lastNameTestWithSmallFirstLetter(){
         String name = "vasilenko";
         boolean expected = false;
-        boolean actual = name.matches(SECOND_NAME__REG_EX);
+        boolean actual = name.matches(SECOND_NAME_REG_EX);
         assertEquals(expected, actual);
     }
 
@@ -54,7 +54,7 @@ public class RegularExpressionTest {
     public void lastNameTestWithLargeLetterInMiddle(){
         String name = "VasilEnko";
         boolean expected = false;
-        boolean actual = name.matches(SECOND_NAME__REG_EX);
+        boolean actual = name.matches(SECOND_NAME_REG_EX);
         assertEquals(expected, actual);
     }
 
