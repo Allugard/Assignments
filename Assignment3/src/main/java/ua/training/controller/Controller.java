@@ -22,9 +22,15 @@ public class Controller {
     }
 
     public void processUser() {
-
         Scanner scanner = new Scanner(System.in);
 
+        inputNote(scanner);
+
+        view.printResultMessages();
+        view.printMessage(model.getNotes().toString());
+    }
+
+    private void inputNote(Scanner scanner) {
         InputNoteController inputNoteController = new InputNoteController(scanner, view);
         boolean finished = false;
         while (!finished){
@@ -33,16 +39,11 @@ public class Controller {
                 finished = true;
             } catch (DuplicateLoginException e) {
                 inputNoteController.inputNewLogin();
-
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
-
-
-        view.printResultMessages();
-
-        view.printMessage(model.getNotes().toString());
-
     }
+
+
 }
