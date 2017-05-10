@@ -6,6 +6,7 @@ package main.java.ua.training.controller.menu;
 public interface Values {
     String EXIT_CODE = "0";
     String  LOAD_VAN = "1";
+    String  PRINT_VAN = "2";
 //    int SORT_VAN = 1;
     String SELECT_PRODUCT="3";
 

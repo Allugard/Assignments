@@ -35,6 +35,9 @@ public class MenuController extends PrintedMenuItem {
                 return new Exit();
             case Values.LOAD_VAN:
                 return new LoadVan(model, view, sc);
+            case Values.PRINT_VAN:
+                view.printVanContent(model.getPackagings());
+                break;
             default:
                 view.printSelectMenuItem();
         }
