@@ -9,7 +9,7 @@ public enum  PackagingSize {
     private double modifierForCoffee;
     private double modifierForPackagingType;
 
-    PackagingSize(double modifierForCoffee, double modifierForPackagingType) {
+    PackagingSize(double modifierForPackagingType, double modifierForCoffee) {
         this.modifierForCoffee = modifierForCoffee;
         this.modifierForPackagingType = modifierForPackagingType;
     }

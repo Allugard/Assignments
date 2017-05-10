@@ -22,6 +22,10 @@ public class Packaging implements Product {
         return packagingSize.getModifierForCoffee()*product.getPrice() + packagingSize.getModifierForPackagingType()*packagingType.getPricePerUnit();
     }
 
+    public double getVolume(){
+        return packagingSize.getModifierForPackagingType()*packagingType.getVolume();
+    }
+
     public Product getProduct() {
         return product;
     }
