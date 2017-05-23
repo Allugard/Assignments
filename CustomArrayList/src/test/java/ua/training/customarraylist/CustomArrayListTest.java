@@ -1,5 +1,6 @@
 package ua.training.customarraylist;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.lang.reflect.Method;
@@ -13,42 +14,64 @@ import static org.junit.Assert.*;
  * Created by allugard on 23.05.17.
  */
 public class CustomArrayListTest {
-    @Test(expected = UnsupportedOperationException.class)
-    public void testSet() throws Exception {
-        List<Object> objects = new CustomArrayList<>();
-        objects.add(new Object());
-        objects.add(new Object());
 
-        objects.set(1, new Object());
+    @Test
+    public void testAddWWithObjectArgument(){
+        CustomArrayList<Object>objects = new CustomArrayList<>();
+        boolean actual = objects.add(new Object());
+        boolean expected = true;
+        Assert.assertEquals(expected, actual);
     }
 
-    @Test(expected = UnsupportedOperationException.class)
-    public void testRemoveByIndex() throws Exception {
-        List<Object> objects = new CustomArrayList<>();
-        objects.add(new Object());
-
-        objects.remove(0);
+    @Test
+    public void testAddWWithIndexAndObjectArgumentsInRange(){
+        CustomArrayList<Object>objects = new CustomArrayList<>();
+        objects.add(0,new Object());
     }
 
-    @Test(expected = UnsupportedOperationException.class)
-    public void testRemoveByObject() throws Exception {
-        List<Object> objects = new CustomArrayList<>();
+    @Test (expected = IndexOutOfBoundsException.class)
+    public void testAddWWithIndexAndObjectArgumentsOutRange(){
+        CustomArrayList<Object>objects = new CustomArrayList<>();
+        objects.add(5,new Object());
+    }
+
+    @Test
+    public void testContainsElementFromList(){
+        CustomArrayList<Object>objects = new CustomArrayList<>();
         Object object = new Object();
         objects.add(object);
-
-        objects.remove(object);
-
+        boolean actual = objects.contains(object);
+        boolean expected = true;
+        Assert.assertEquals(expected, actual);
     }
 
-    @Test(expected = UnsupportedOperationException.class)
-    public void testRemoveAll() throws Exception {
-        List<Object> objects = new CustomArrayList<>();
+    @Test
+    public void testContainsElemetnOutOfList(){
+        CustomArrayList<Object>objects = new CustomArrayList<>();
+        Object object = new Object();
         objects.add(new Object());
+        boolean actual = objects.contains(object);
+        boolean expected = false;
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testGetSame(){
+        CustomArrayList<Object>objects = new CustomArrayList<>();
+        Object object = new Object();
+        objects.add(object);
+        Object returned = objects.get(0);
+        boolean actual = object.equals(returned);
+        boolean expected = true;
+        Assert.assertEquals(expected, actual);
+    }
+
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void testGetIndexOutOfBounds(){
+        CustomArrayList<Object>objects = new CustomArrayList<>();
+        Object object = new Object();
         objects.add(new Object());
-
-        List <Object> objectList = new  CustomArrayList();
-
-        objects.removeAll(objectList);
+        Object returned = objects.get(5);
     }
 
 }

@@ -3,46 +3,27 @@ package ua.training.customarraylist;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
-import java.util.function.Predicate;
-import java.util.function.UnaryOperator;
 
 /**
  * Created by allugard on 23.05.17.
  */
-public class CustomArrayList<E> extends ArrayList<E> {
+public class CustomArrayList<E>  {
 
-    @Override
-    public E set(int index, E element) {
-        throw new UnsupportedOperationException();
+    private final List<E> arrayList = new ArrayList<E>();
+
+    public boolean add(E object){
+        return arrayList.add(object);
     }
 
-    @Override
-    public E remove(int index) {
-        throw new UnsupportedOperationException();
+    public void add(int index, E object){
+        arrayList.add(index, object);
     }
 
-    @Override
-    public boolean remove(Object o) {
-        throw new UnsupportedOperationException();
+    public boolean contains(E object){
+        return arrayList.contains(object);
     }
 
-    @Override
-    protected void removeRange(int fromIndex, int toIndex) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public boolean removeAll(Collection<?> c) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public boolean removeIf(Predicate<? super E> filter) {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public void replaceAll(UnaryOperator<E> operator) {
-        throw new UnsupportedOperationException();
+    public E get(int index){
+        return arrayList.get(index);
     }
 }
