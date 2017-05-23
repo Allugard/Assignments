@@ -1,9 +1,10 @@
-package main.java.ua.training.project.controller.menu.action;
+package ua.training.vanloading.controller.menu.action;
 
-import main.java.ua.training.project.controller.menu.Values;
-import main.java.ua.training.project.model.CoffeeVan;
-import main.java.ua.training.project.service.SelectorCoffeeByParameters;
-import main.java.ua.training.project.view.View;
+import ua.training.vanloading.controller.menu.ActionWithInputData;
+import ua.training.vanloading.controller.menu.Values;
+import ua.training.vanloading.model.CoffeeVan;
+import ua.training.vanloading.service.SelectorCoffeeByParameters;
+import ua.training.vanloading.view.View;
 
 import java.util.*;
 

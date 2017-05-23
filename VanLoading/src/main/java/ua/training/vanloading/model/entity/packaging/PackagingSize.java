@@ -1,4 +1,4 @@
-package main.java.ua.training.project.model.entity.packaging;
+package ua.training.vanloading.model.entity.packaging;
 
 /**
  * Created by allugard on 09.05.17.

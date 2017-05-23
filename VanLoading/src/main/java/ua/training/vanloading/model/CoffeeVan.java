@@ -1,6 +1,6 @@
-package main.java.ua.training.project.model;
+package ua.training.vanloading.model;
 
-import main.java.ua.training.project.model.entity.packaging.Packaging;
+import ua.training.vanloading.model.entity.packaging.Packaging;
 
 import java.util.*;
 

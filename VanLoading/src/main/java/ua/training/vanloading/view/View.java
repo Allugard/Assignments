@@ -1,13 +1,13 @@
-package main.java.ua.training.project.view;
+package ua.training.vanloading.view;
 
-import main.java.ua.training.project.model.entity.coffee.Coffee;
-import main.java.ua.training.project.model.entity.packaging.Packaging;
+import ua.training.vanloading.model.entity.coffee.Coffee;
+import ua.training.vanloading.model.entity.packaging.Packaging;
 
 import java.util.List;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
-import static main.java.ua.training.project.view.Values.*;
+import static ua.training.vanloading.view.Values.*;
 
 /**
  * Created by allugard on 10.05.17.

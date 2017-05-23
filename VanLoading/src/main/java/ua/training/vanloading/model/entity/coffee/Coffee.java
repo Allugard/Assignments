@@ -1,6 +1,6 @@
-package main.java.ua.training.project.model.entity.coffee;
+package ua.training.vanloading.model.entity.coffee;
 
-import main.java.ua.training.project.model.entity.Product;
+import ua.training.vanloading.model.entity.Product;
 
 /**
  * Created by allugard on 09.05.17.

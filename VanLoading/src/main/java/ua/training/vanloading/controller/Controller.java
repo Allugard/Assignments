@@ -1,8 +1,8 @@
-package main.java.ua.training.project.controller;
+package ua.training.vanloading.controller;
 
-import main.java.ua.training.project.controller.menu.MenuController;
-import main.java.ua.training.project.model.CoffeeVan;
-import main.java.ua.training.project.view.View;
+import ua.training.vanloading.controller.menu.MenuController;
+import ua.training.vanloading.model.CoffeeVan;
+import ua.training.vanloading.view.View;
 
 import java.util.Scanner;
 

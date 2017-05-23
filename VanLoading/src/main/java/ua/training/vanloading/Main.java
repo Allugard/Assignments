@@ -1,8 +1,8 @@
-package main.java.ua.training.project;
+package ua.training.vanloading;
 
-import main.java.ua.training.project.controller.Controller;
-import main.java.ua.training.project.model.CoffeeVan;
-import main.java.ua.training.project.view.View;
+import ua.training.vanloading.controller.Controller;
+import ua.training.vanloading.model.CoffeeVan;
+import ua.training.vanloading.view.View;
 
 import java.util.ArrayList;
 import java.util.Collection;

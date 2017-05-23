@@ -1,4 +1,4 @@
-package main.java.ua.training.project.controller.menu.action;
+package ua.training.vanloading.controller.menu;
 
 /**
  * Created by allugard on 10.05.17.

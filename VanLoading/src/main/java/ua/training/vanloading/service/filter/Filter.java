@@ -1,6 +1,6 @@
-package main.java.ua.training.project.service.filter;
+package ua.training.vanloading.service.filter;
 
-import main.java.ua.training.project.model.entity.packaging.Packaging;
+import ua.training.vanloading.model.entity.packaging.Packaging;
 
 import java.util.List;
 import java.util.Objects;

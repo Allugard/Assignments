@@ -1,14 +1,16 @@
-package main.java.ua.training.project.controller.menu.action;
+package ua.training.vanloading.controller.menu.action;
 
-import main.java.ua.training.project.controller.menu.Values;
-import main.java.ua.training.project.service.PackagingCoffeeBuilder;
-import main.java.ua.training.project.model.CoffeeVan;
-import main.java.ua.training.project.model.entity.coffee.KindOfCoffee;
-import main.java.ua.training.project.model.entity.coffee.State;
-import main.java.ua.training.project.model.entity.packaging.Packaging;
-import main.java.ua.training.project.model.entity.packaging.PackagingSize;
-import main.java.ua.training.project.model.entity.packaging.PackagingType;
-import main.java.ua.training.project.view.View;
+
+import ua.training.vanloading.controller.menu.ActionWithInputData;
+import ua.training.vanloading.controller.menu.Values;
+import ua.training.vanloading.model.CoffeeVan;
+import ua.training.vanloading.model.entity.coffee.KindOfCoffee;
+import ua.training.vanloading.model.entity.coffee.State;
+import ua.training.vanloading.model.entity.packaging.Packaging;
+import ua.training.vanloading.model.entity.packaging.PackagingSize;
+import ua.training.vanloading.model.entity.packaging.PackagingType;
+import ua.training.vanloading.service.PackagingCoffeeBuilder;
+import ua.training.vanloading.view.View;
 
 import java.util.Random;
 import java.util.Scanner;

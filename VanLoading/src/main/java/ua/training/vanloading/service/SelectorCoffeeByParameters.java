@@ -1,10 +1,10 @@
-package main.java.ua.training.project.service;
+package ua.training.vanloading.service;
 
-import main.java.ua.training.project.model.CoffeeVan;
-import main.java.ua.training.project.model.entity.packaging.Packaging;
-import main.java.ua.training.project.service.filter.Filter;
-import main.java.ua.training.project.service.filter.HumidityFilter;
-import main.java.ua.training.project.service.filter.ScentFilter;
+import ua.training.vanloading.model.CoffeeVan;
+import ua.training.vanloading.model.entity.packaging.Packaging;
+import ua.training.vanloading.service.filter.Filter;
+import ua.training.vanloading.service.filter.HumidityFilter;
+import ua.training.vanloading.service.filter.ScentFilter;
 
 import java.util.*;
 

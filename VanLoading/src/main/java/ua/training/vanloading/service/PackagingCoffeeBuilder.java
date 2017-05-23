@@ -1,11 +1,11 @@
-package main.java.ua.training.project.service;
+package ua.training.vanloading.service;
 
-import main.java.ua.training.project.model.entity.coffee.Coffee;
-import main.java.ua.training.project.model.entity.coffee.KindOfCoffee;
-import main.java.ua.training.project.model.entity.coffee.State;
-import main.java.ua.training.project.model.entity.packaging.Packaging;
-import main.java.ua.training.project.model.entity.packaging.PackagingSize;
-import main.java.ua.training.project.model.entity.packaging.PackagingType;
+import ua.training.vanloading.model.entity.coffee.Coffee;
+import ua.training.vanloading.model.entity.coffee.KindOfCoffee;
+import ua.training.vanloading.model.entity.coffee.State;
+import ua.training.vanloading.model.entity.packaging.Packaging;
+import ua.training.vanloading.model.entity.packaging.PackagingSize;
+import ua.training.vanloading.model.entity.packaging.PackagingType;
 
 /**
  * Created by allugard on 10.05.17.

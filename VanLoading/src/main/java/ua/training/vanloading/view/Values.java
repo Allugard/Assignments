@@ -1,4 +1,4 @@
-package main.java.ua.training.project.view;
+package ua.training.vanloading.view;
 
 /**
  * Created by allugard on 11.05.17.
