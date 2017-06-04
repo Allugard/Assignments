@@ -1,0 +1,92 @@
+SQL Requests
+
+1.Написать запрос, считающий суммарное количество имеющихся на сайте новостей и обзоров.
+
+SELECT sum(two_tables.num_news_reviews) AS sum
+FROM (
+	SELECT count(*) AS num_news_reviews
+    FROM reviews
+    
+    UNION
+    
+    SELECT count(*) AS num_news_reviews
+    FROM news
+) two_tables
+
+2.Написать запрос, показывающий список категорий новостей и количество новостей в каждой категории.
+
+SELECT nc_name, count(n_id)
+FROM news_categories 
+LEFT JOIN news on n_category=nc_id 
+GROUP BY nc_name
+
+3. Написать запрос, показывающий список категорий обзоров и количество обзоров в каждой категории.
+
+SELECT rc_name, count(r_id)
+FROM reviews_categories 
+LEFT JOIN reviews on r_category=rc_id 
+GROUP BY rc_name
+
+4.Написать запрос, показывающий список категорий новостей, категорий обзоров и дату самой свежей публикации в каждой категории.
+
+SELECT rc_name, max(r_dt)
+FROM reviews_categories 
+JOIN reviews on rc_id=r_category 
+GROUP BY rc_name
+
+UNION
+
+SELECT nc_name, max(n_dt)
+FROM news_categories 
+JOIN news on nc_id=n_category
+GROUP BY nc_name
+
+5.Написать запрос, показывающий список страниц сайта верхнего уровня (у таких страниц нет родительской страницы) и список баннеров для каждой такой страницы.
+
+SELECT p_name, banners.b_id, b_url
+FROM pages
+JOIN m2m_banners_pages  using(p_id)
+JOIN banners using(b_id)
+WHERE p_parent is null
+
+6.Написать запрос, показывающий список страниц сайта, на которых есть баннеры.
+
+SELECT distinct p_name 
+FROM pages
+JOIN m2m_banners_pages using (p_id)
+
+7.Написать запрос, показывающий список страниц сайта, на которых нет баннеров.
+
+SELECT distinct p_name 
+FROM pages
+WHERE p_id not in (
+	select p_id
+    FROM m2m_banners_pages)
+
+8.Написать запрос, показывающий список баннеров, размещённых хотя бы на одной странице сайта.
+
+SELECT distinct b_id, b_url 
+FROM banners
+JOIN m2m_banners_pages using(b_id)
+
+9.Написать запрос, показывающий список баннеров, не размещённых ни на одной странице сайта.
+
+SELECT distinct b_id, b_url 
+FROM banners
+WHERE b_id not in (
+	SELECT b_id
+    FROM m2m_banners_pages)
+
+10.Написать запрос, показывающий баннеры, для которых отношение кликов к показам >= 80% (при условии, что баннер был показан хотя бы один раз).
+
+SELECT *
+FROM (
+	SELECT b_id, b_url, b_click/b_show*100 AS rate
+	FROM banners
+    WHERE b_show<>0
+    ) AS s
+WHERE s.rate>=80
+
+
+
+
