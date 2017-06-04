@@ -3,7 +3,7 @@ package ua.training.vanloading.controller.menu.action;
 import ua.training.vanloading.controller.menu.ActionWithInputData;
 import ua.training.vanloading.controller.menu.Values;
 import ua.training.vanloading.model.CoffeeVan;
-import ua.training.vanloading.service.SelectorCoffeeByParameters;
+import ua.training.vanloading.model.util.select.by.parameters.SelectorCoffeeByParameters;
 import ua.training.vanloading.view.View;
 
 import java.util.*;

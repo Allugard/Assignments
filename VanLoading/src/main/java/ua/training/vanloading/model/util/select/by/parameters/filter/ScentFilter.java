@@ -1,4 +1,4 @@
-package ua.training.vanloading.service.filter;
+package ua.training.vanloading.model.util.select.by.parameters.filter;
 
 import ua.training.vanloading.model.entity.coffee.Coffee;
 import ua.training.vanloading.model.entity.packaging.Packaging;

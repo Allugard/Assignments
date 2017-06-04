@@ -1,9 +1,8 @@
-package ua.training.vanloading.service.filter;
+package ua.training.vanloading.model.util.select.by.parameters.filter;
 
 import ua.training.vanloading.model.entity.packaging.Packaging;
 
 import java.util.List;
-import java.util.Objects;
 
 /**
  * Created by allugard on 10.05.17.

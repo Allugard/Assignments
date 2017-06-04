@@ -9,7 +9,7 @@ import ua.training.vanloading.model.entity.coffee.State;
 import ua.training.vanloading.model.entity.packaging.Packaging;
 import ua.training.vanloading.model.entity.packaging.PackagingSize;
 import ua.training.vanloading.model.entity.packaging.PackagingType;
-import ua.training.vanloading.service.PackagingCoffeeBuilder;
+import ua.training.vanloading.model.util.PackagingCoffeeBuilder;
 import ua.training.vanloading.view.View;
 
 import java.util.Random;

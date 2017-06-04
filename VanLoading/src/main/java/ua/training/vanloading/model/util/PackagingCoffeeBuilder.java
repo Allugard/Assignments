@@ -1,4 +1,4 @@
-package ua.training.vanloading.service;
+package ua.training.vanloading.model.util;
 
 import ua.training.vanloading.model.entity.coffee.Coffee;
 import ua.training.vanloading.model.entity.coffee.KindOfCoffee;

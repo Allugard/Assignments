@@ -1,10 +1,10 @@
-package ua.training.vanloading.service;
+package ua.training.vanloading.model.util.select.by.parameters;
 
 import ua.training.vanloading.model.CoffeeVan;
 import ua.training.vanloading.model.entity.packaging.Packaging;
-import ua.training.vanloading.service.filter.Filter;
-import ua.training.vanloading.service.filter.HumidityFilter;
-import ua.training.vanloading.service.filter.ScentFilter;
+import ua.training.vanloading.model.util.select.by.parameters.filter.Filter;
+import ua.training.vanloading.model.util.select.by.parameters.filter.HumidityFilter;
+import ua.training.vanloading.model.util.select.by.parameters.filter.ScentFilter;
 
 import java.util.*;
 
