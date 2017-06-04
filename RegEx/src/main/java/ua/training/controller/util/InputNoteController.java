@@ -66,7 +66,7 @@ public class InputNoteController {
             view.printInputAppartmentNumberMessages();
             apartmentNumber = inputData(APPARTMENT_NUMBER_REG_EX);
 
-            note = Note.Build(firstName, lastName, login, email, phone, city, street, houseNumber, apartmentNumber);
+            note = Note.build(firstName, lastName, login, email, phone, city, street, houseNumber, apartmentNumber);
         }
 
         return note;

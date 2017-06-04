@@ -6,11 +6,9 @@ import ua.training.dao.util.DataSource;
 import ua.training.exceptions.DuplicateLoginException;
 import ua.training.model.entity.Note;
 
-import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 /**
  * Created by allugard on 26.04.17.
@@ -20,7 +18,7 @@ public class NoteDaoJdbcImpl implements NoteDao {
     private DataSource dataSource;
 
     public NoteDaoJdbcImpl(){
-        dataSource = DataSource.MySqlDataSource();
+        dataSource = DataSource.mySqlDataSource();
     }
 
     @Override

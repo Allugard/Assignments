@@ -21,8 +21,8 @@ public class Note {
         this.address = address;
     }
 
-    public static Note Build(String firstName, String lastName, String login, String email, String phone,
-                      String town, String street, String houseNumber, String apartmentNumber){
+    public static Note build(String firstName, String lastName, String login, String email, String phone,
+                             String town, String street, String houseNumber, String apartmentNumber){
         return new Note(new FullName(firstName, lastName), login, email, phone,
                 new Address(town, street, houseNumber, apartmentNumber));
     }

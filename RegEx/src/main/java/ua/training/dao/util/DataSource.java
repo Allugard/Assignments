@@ -26,7 +26,7 @@ public class DataSource {
         this.password = password;
     }
 
-    public static DataSource MySqlDataSource()  {
+    public static DataSource mySqlDataSource()  {
         if (dataSource == null) {
             Properties properties = new Properties();
             InputStream fileInputStream;
