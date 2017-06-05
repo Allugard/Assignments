@@ -215,7 +215,31 @@ FROM (
         select  MAX(r_dt) AS date
         from reviews) AS s
 
-24.
+24.Написать запрос, показывающий баннеры, в тексте которых встречается часть URL, на который ссылается баннер.
+
+SELECT b_id, b_url, b_text
+FROM banners 
+WHERE b_text = (
+		SELECT substring(b_url, 8)
+                )
+
+25.Написать запрос, показывающий страницу, на которой размещён баннер с самым высоким отношением кликов к показам.
+
+SELECT p_name
+FROM pages
+JOIN m2m_banners_pages USING(p_id)
+JOIN banners USING(b_id)
+ORDER BY b_click/b_show DESC
+LIMIT 1
+
+26.Написать запрос, считающий среднее отношение кликов к показам по всем баннерам, которые были показаны хотя бы один раз.
+
+SELECT AVG(b_click/b_show)
+FROM banners
+WHERE b_show <> 0 
+
+27.
+
 
 
 
