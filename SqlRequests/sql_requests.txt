@@ -17,63 +17,63 @@ FROM (
 
 SELECT nc_name, count(n_id)
 FROM news_categories 
-LEFT JOIN news on n_category=nc_id 
+LEFT JOIN news ON n_category=nc_id 
 GROUP BY nc_name
 
 3. Написать запрос, показывающий список категорий обзоров и количество обзоров в каждой категории.
 
 SELECT rc_name, count(r_id)
 FROM reviews_categories 
-LEFT JOIN reviews on r_category=rc_id 
+LEFT JOIN reviews ON r_category=rc_id 
 GROUP BY rc_name
 
 4.Написать запрос, показывающий список категорий новостей, категорий обзоров и дату самой свежей публикации в каждой категории.
 
 SELECT rc_name, max(r_dt)
 FROM reviews_categories 
-JOIN reviews on rc_id=r_category 
+JOIN reviews ON rc_id=r_category 
 GROUP BY rc_name
 
 UNION
 
 SELECT nc_name, max(n_dt)
 FROM news_categories 
-JOIN news on nc_id=n_category
+JOIN news ON nc_id=n_category
 GROUP BY nc_name
 
 5.Написать запрос, показывающий список страниц сайта верхнего уровня (у таких страниц нет родительской страницы) и список баннеров для каждой такой страницы.
 
 SELECT p_name, banners.b_id, b_url
 FROM pages
-JOIN m2m_banners_pages  using(p_id)
-JOIN banners using(b_id)
-WHERE p_parent is null
+JOIN m2m_banners_pages  USING(p_id)
+JOIN banners USING(b_id)
+WHERE p_parent IS NULL
 
 6.Написать запрос, показывающий список страниц сайта, на которых есть баннеры.
 
-SELECT distinct p_name 
+SELECT DISTINCT p_name 
 FROM pages
-JOIN m2m_banners_pages using (p_id)
+JOIN m2m_banners_pages USING (p_id)
 
 7.Написать запрос, показывающий список страниц сайта, на которых нет баннеров.
 
-SELECT distinct p_name 
+SELECT DISTINCT p_name 
 FROM pages
-WHERE p_id not in (
+WHERE p_id NOT IN (
 	select p_id
     FROM m2m_banners_pages)
 
 8.Написать запрос, показывающий список баннеров, размещённых хотя бы на одной странице сайта.
 
-SELECT distinct b_id, b_url 
+SELECT DISTINCT b_id, b_url 
 FROM banners
-JOIN m2m_banners_pages using(b_id)
+JOIN m2m_banners_pages USING(b_id)
 
 9.Написать запрос, показывающий список баннеров, не размещённых ни на одной странице сайта.
 
-SELECT distinct b_id, b_url 
+SELECT DISTINCT b_id, b_url 
 FROM banners
-WHERE b_id not in (
+WHERE b_id NOT IN (
 	SELECT b_id
     FROM m2m_banners_pages)
 
@@ -87,6 +87,135 @@ FROM (
     ) AS s
 WHERE s.rate>=80
 
+11.Написать запрос, показывающий список страниц сайта, на которых показаны баннеры с текстом (в поле `b_text` не NULL).
+
+SELECT DISTINCT p_name
+FROM pages
+JOIN m2m_banners_pages USING (p_id)
+JOIN banners USING (b_id)
+WHERE b_text IS NOT NULL
+
+12.Написать запрос, показывающий список страниц сайта, на которых показаны баннеры с картинкой (в поле `b_pic` не NULL).
+
+SELECT DISTINCT p_name
+FROM pages
+JOIN m2m_banners_pages USING (p_id)
+JOIN banners USING (b_id)
+WHERE b_pic IS NOT NULL
+
+13.Написать запрос, показывающий список публикаций (новостей и обзоров) за 2011-й год.
+
+SELECT n_header AS header, n_dt AS date
+FROM news
+WHERE YEAR(n_dt)=2011
+
+UNION
+
+SELECT r_header, r_dt
+FROM reviews
+WHERE YEAR(r_dt)=2011
+
+14.Написать запрос, показывающий список категорий публикаций (новостей и обзоров), в которых нет публикаций.
+
+SELECT nc_name
+FROM news_categories
+WHERE nc_id NOT IN (
+					SELECT n_category
+                    FROM news)
+                    
+UNION
+
+SELECT rc_name
+FROM reviews_categories
+WHERE rc_id NOT IN (
+					SELECT r_category
+                    FROM reviews)
+
+15.Написать запрос, показывающий список новостей из категории «Логистика» за 2012-й год.
+
+SELECT n_header, n_dt
+FROM news
+JOIN news_categories ON n_category=nc_id
+WHERE nc_name="Логистика" AND YEAR(n_dt)=2012
+
+16.Написать запрос, показывающий список годов, за которые есть новости, а также количество новостей за каждый из годов.
+
+SELECT YEAR(n_dt) AS year, COUNT(*)
+FROM news
+GROUP BY year
+
+17.Написать запрос, показывающий URL и id таких баннеров, где для одного и того же URL есть несколько баннеров.
+
+SELECT b_url, b_id
+FROM banners
+WHERE b_url IN (SELECT b_url
+                FROM banners
+                GROUP BY b_url
+                HAVING COUNT(*) > 1)
+
+18.Написать запрос, показывающий список непосредственных подстраниц страницы «Юридическим лицам» со списком баннеров этих подстраниц.
+
+SELECT b_url, b_id
+FROM banners
+WHERE b_url IN (SELECT b_url
+                FROM banners
+                GROUP BY b_url
+                HAVING COUNT(*) > 1)
+
+19.Написать запрос, показывающий список всех баннеров с картинками (поле `b_pic` не NULL), отсортированный по убыванию отношения кликов по баннеру к показам баннера.
+
+SELECT b_id, b_url, b_click/b_show*100 AS rate
+FROM banners
+WHERE b_show<>0 and b_pic IS NOT NULL
+ORDER BY rate DESC
+
+20.Написать запрос, показывающий самую старую публикацию на сайте (не важно – новость это или обзор).
+
+SELECT header, date
+FROM (
+		SELECT n_header AS header, n_dt AS date
+        FROM news
+        
+        UNION
+        
+        SELECT r_header AS header, r_dt AS date
+        FROM reviews
+        ) AS t
+WHERE date = (
+			SELECT LEAST(MIN(n_dt), MIN(r_dt))
+            FROM news, reviews)
+
+21.Написать запрос, показывающий список баннеров, URL которых встречается в таблице один раз.
+
+SELECT b_url, b_id
+FROM banners
+WHERE b_url IN (SELECT b_url
+                FROM banners
+                GROUP BY b_url
+                HAVING COUNT(*) = 1)
+
+22.Написать запрос, показывающий список страниц сайта в порядке убывания количества баннеров, расположенных на странице. Для случаев, когда на нескольких страницах расположено одинаковое количество баннеров, этот список страниц должен быть отсортирован по возрастанию имён страниц.
+
+SELECT p_name, COUNT(b_id) AS banners_count
+FROM pages
+JOIN m2m_banners_pages USING(p_id)
+JOIN banners USING(b_id)
+GROUP BY p_name
+ORDER BY banners_count DESC, p_name ASC
+
+23.Написать запрос, показывающий самую «свежую» новость и самый «свежий» обзор.
+
+SELECT *
+FROM (
+	SELECT MAX(n_dt) AS date
+        from news
+        
+        union
+        
+        select  MAX(r_dt) AS date
+        from reviews) AS s
+
+24.
 
 
 
