@@ -258,13 +258,14 @@ SELECT banners.b_id, b_url, MAX(count_outer)
 FROM banners, (
 				SELECT COUNT(*) AS count_outer, b_id 
                 FROM m2m_banners_pages
-                GROUP BY b_id) t1
+                GROUP BY b_id
+				) t1
 WHERE banners.b_id= t1.b_id AND count_outer = (
 												SELECT MAX(count_inner) 
                                                 FROM (
-                                                SELECT COUNT(*) AS count_inner 
-                                                FROM m2m_banners_pages
-                                                GROUP BY b_id
+                                                	  SELECT COUNT(*) AS count_inner 
+                                              		  FROM m2m_banners_pages
+                                                	  GROUP BY b_id
                                                 ) t2
 											)
 GROUP BY b_id
